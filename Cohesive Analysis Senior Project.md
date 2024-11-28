@@ -125,7 +125,7 @@ The models perform quite well when it comes to authors/text that had a higher am
 We can view the performance of the models in two ways: through the raw metrics numbers and through a confusion matrix. A confusion matrix shows how each author performed in the model. This is valuable information as it allows us to see how the model is specifically working/messing up. Since the Random Forest model performed the best, we will look at the performance of that model against the different datasets. For interpretation of a confusion matrix a simple way to look at it is the higher the numbers on the diagonal the better.
 
 ### *The Book of Mormon Authorship*
-![BoM Random Forest Confusion Matrix](Graphs\BoM\rf.png)
+![BoM Random Forest Confusion Matrix](Graphs/BoM/rf.png)
 
 - Accuracy: 0.9400
 - Precision: 0.9434
@@ -136,7 +136,7 @@ As you can see with just predicting within The Book of Mormon the Random Forest 
 
 We can see that when including Joseph Smith's writings as found in Doctrine and Covenants, this pattern continues.
 
-![BoM Random Forest Confusion Matrix](Graphs\BoM&D&C\rf.png)
+![BoM Random Forest Confusion Matrix](Graphs/BoM&D&C/rf.png)
 
 - Accuracy: 0.9083
 - Precision: 0.9164
@@ -147,7 +147,7 @@ When Doctrine and Covenants is thrown in, the accuracy is still very high, but t
 
 What’s interesting to note is that sometimes when other authors are thrown in, the predictive power increases. 
 
-![BoM&Others Random Forest Confusion Matrix](Graphs\BoM&Others\rf.png)
+![BoM&Others Random Forest Confusion Matrix](Graphs/BoM&Others/rf.png)
 
 - Accuracy: 0.9688
 - Precision: 0.9715
@@ -158,7 +158,7 @@ When some other 1800's texts are thrown into the model it seems to help the mode
 
 Across all the different confusion matrices created The Book of Mormon has close to the same consistent results regardless of other text included in the model. The only author that differs is Enos, which can be accounted for his low amount of text written. We can see The Book of Mormon's consistent performance when comparing it against just The Pearl of Great Price.
 
-![BoM&POGP Random Forest Confusion Matrix](Graphs\BoM&POGP\rf.png)
+![BoM&POGP Random Forest Confusion Matrix](Graphs/BoM&POGP/rf.png)
 
 - Accuracy: 0.7278
 - Precision: 0.6505
@@ -169,7 +169,7 @@ As we can see the numeric metrics are not nearly as strong in this data set, but
 
 The highest performing dataset was the Doctrine and Covenants, The Late War, the Spaulding Manuscript and The View of The Hebrews.
 
-![D&C&Others Random Forest Confusion Matrix](Graphs\D&C&Others\rf.png)
+![D&C&Others Random Forest Confusion Matrix](Graphs/D&C&Others/rf.png)
 
 - Accuracy: 1.0000
 - Precision: 1.0000
@@ -180,7 +180,7 @@ We can see that the model was able to perfectly predict authorship of these text
 
 Lastly looking at all the data together the confusion matrix shows pretty good results.
 
-![all Random Forest Confusion Matrix](Graphs\all\rf.png)
+![all Random Forest Confusion Matrix](Graphs/all/rf.png)
 
 - Accuracy: 0.7674
 - Precision: 0.7813
@@ -193,27 +193,27 @@ The numeric results aren't as strong, but when accounting for some authors that 
 
 Another way to analyze authorship would be to visualize function word use percentages in a scatterplot. I plot two words at a time as some words have a correlation in usage. Some have no correlation and are simply just a means to showcase more data at once. An important factor to look at is groupings. I divided authorship by color. The Book of Mormon authors are shades of blue, Joseph Smith is black and The Late War, The Spaulding Manuscript and The Late War are red. Some words show tighter groupings between those different authorships and some show no much correlation. Below are a diverse amount of word combinations showing the different correlations:
 
-[the of combination](Graphs/Word Comparisons/the_of_output.png)
+![the of combination](Graphs/Word Comparisons/the_of_output.png)
 
-[lord god combination](Graphs\Word Comparisons\lord_god_output.png)
+![lord god combination](Graphs/Word Comparisons/lord_god_output.png)
 
-[with had combination](Graphs\Word Comparisons\with_had_output.png)
+![with had combination](Graphs/Word Comparisons/with_had_output.png)
 
-[many also combination](Graphs\Word Comparisons\many_also_output.png)
+![many also combination](Graphs/Word Comparisons/many_also_output.png)
 
-[therefore wherefore combination](Graphs\Word Comparisons\therefore_wherefore_output.png)
+![therefore wherefore combination](Graphs/Word Comparisons/therefore_wherefore_output.png)
 
-[is make combination](Graphs\Word Comparisons\is_make_output.png)
+![is make combination](Graphs/Word Comparisons/is_make_output.png)
 
-[such did combination](Graphs\Word Comparisons\such_did_output.png)
+![such did combination](Graphs/Word Comparisons/such_did_output.png)
 
-[because thereby combination](Graphs\Word Comparisons\because_thereby_output.png)
+![because thereby combination](Graphs/Word Comparisons/because_thereby_output.png)
 
-[if my combination](Graphs\Word Comparisons\if_my_output.png)
+![if my combination](Graphs/Word Comparisons/if_my_output.png)
 
-[like how combination](Graphs\Word Comparisons\like_how_output.png)
+![like how combination](Graphs/Word Comparisons/like_how_output.png)
 
-[say wherefore combination](Graphs\Word Comparisons\say_wherefore_output.png)
+![say wherefore combination](Graphs/Word Comparisons/say_wherefore_output.png)
 
 Graphs based off of other stylometric variables (average letter per word, average words per sentence, vowel usage) also provide some interesting insights
 

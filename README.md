@@ -1,3 +1,4 @@
 # BoM-stylometric-analysis
-[Link To Analysis](Cohesive Analysis Senior Project.md)
+
+[Link To Analysis](Cohesive%20Analysis%20Senior%20Project.md)
 
