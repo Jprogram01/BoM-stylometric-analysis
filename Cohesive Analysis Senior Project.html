@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cohesive-analysis-senior-project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Cohesive Analysis Senior Project_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Cohesive Analysis Senior Project_files/libs/quarto-html/quarto.js"></script>
+<script src="Cohesive Analysis Senior Project_files/libs/quarto-html/popper.min.js"></script>
+<script src="Cohesive Analysis Senior Project_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Cohesive Analysis Senior Project_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Cohesive Analysis Senior Project_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Cohesive Analysis Senior Project_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Cohesive Analysis Senior Project_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Cohesive Analysis Senior Project_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Cohesive Analysis Senior Project_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="a-stylometric-analysis-of-the-book-of-mormon" class="level1">
+<h1>A Stylometric Analysis of The Book of Mormon</h1>
+<p><strong>By: Joseph Allen</strong></p>
+<hr>
+</section>
+<section id="description" class="level1">
+<h1>Description</h1>
+<p>Stylometry is the statistical analysis of variations in literary style between writers. One of the most controversial texts of the 1800’s is Joseph Smith’s “The Book of Mormon’ Joseph Smith’s claim regarding the text is that he translated it from an ancient record. He also claims that translation process was done through miraculous means. Looking at The Book of Mormon we see that the text claims multiple unique authorship. Critics would claim a naturalistic approach for The Book of Mormon meaning that Joseph Smith did not have any miraculous means to write The Book of Mormon and instead wrote it through his own abilities and intellect.</p>
+</section>
+<section id="purpose" class="level1">
+<h1>Purpose</h1>
+<p>The goal is to use stylometric methods to analyze The Book of Mormon and explore its claims of diverse authorship. Additionally, we aim to compare it to other contemporary texts, including those written by Joseph Smith and his contemporaries, using modern data analysis techniques.</p>
+</section>
+<section id="scope-and-overview" class="level1">
+<h1>Scope and Overview</h1>
+<p>This analysis will cover: - The Book of Mormon - Other writings by Joseph Smith (e.g., Doctrine and Covenants, Pearl of Great Price) - Texts from the same era that critics often claim would be possible sources Joseph Smith used to write The Book of Mormon (The Late War, Spaulding Manuscripts, View of The Hebrews) - New Testament</p>
+<p>Using machine learning and data visualization, we will: - Compare authorship within The Book of Mormon - Compare The Book of Mormon to Joseph Smith’s other writings - Compare The Book of Mormon to other 19th-century texts - Compare The Book of Mormon to the New Testament - Compare all the text to each other.</p>
+<p>We will focus on stylometric variables such as: - Function words - Average letters used per word - Average words used per sentence - Individual letter usage</p>
+<p>The usage of function words provide us some very useful info in determining of authorship. In an article written by Mike Kestemont, “Function Words in Authorship Attribution From Black Magic to Theory?” He provides some useful points as to why function words are useful for this analysis.</p>
+<ul>
+<li><p>“All authors writing in the same language and period are bound to use the very same function words. Function words are therefore a reliable base for textual comparison;”</p></li>
+<li><p>“Their high frequency makes them interesting from a quantitative point of view, since we have many observations for them;”</p></li>
+<li><p>“The use of function words is not strongly affected by a text’s topic or genre: the use of the article ‘the’, for instance, is unlikely to be influenced by a text’s topic.”</p></li>
+<li><p>“The use of function words seems less under an author’s conscious control during the writing process.”</p></li>
+<li><p>“Recall the last advantage listed above: the argument is often raised that the use of these words would not be under an author’s conscious control during the writing process (Stamatatos, 2009; Binongo, 2003; Argamon and Levitan, 2005; Peng et al., 2003). This would indeed help to explain why function words might act as an author invariant throughout an oeuvre (Koppel et al., 2009, p.&nbsp;11). Moreover, from a methodological point of view, this would have to be true for forgers and imitators as well, hence, rendering function words resistant to stylistic imitation and forgery.”</p></li>
+</ul>
+<p>Mike Kestemont writes about this idea that function words are used by and author subconsciously, and an author’s usage of them can help reveal imitations and forgeries.</p>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<ol type="1">
+<li><strong>Problem Definition</strong>: Stylometric analysis of The Book of Mormon and other contemporary text.</li>
+<li><strong>Data Collection</strong>: Gather texts from The Book of Mormon and other relevant sources.</li>
+<li><strong>Data Exploration and Preprocessing</strong>: Prepare the text for analysis.</li>
+<li><strong>Data Analysis</strong>: Visualize various stylometric variables.</li>
+<li><strong>Modeling</strong>: Train machine learning models to test authorship.</li>
+<li><strong>Model Evaluation</strong>: Validate model performance.</li>
+<li><strong>Results Communication</strong>: Present findings.</li>
+</ol>
+</section>
+<section id="data-preprocessing-process" class="level1">
+<h1>Data Preprocessing Process</h1>
+<p>My goal was to extract stylometric variables out of the text according to authorship. This involved first involved gathering all writings and annotating them to their associated authors. From there I was able to divide the writings into subsets based on how much training data I wanted.</p>
+<p>For each author grouping of verses, I extracted the following stylometric variables out of the text:</p>
+<ul>
+<li>Individual function word use frequency compared to all words</li>
+<li>Individual function word use frequency compared to all function words.’</li>
+<li>Overall function word use percentage</li>
+<li>Total word count</li>
+<li>Total function word count</li>
+<li>Letter use percentages</li>
+<li>Average letters per word</li>
+<li>Average word per verse</li>
+</ul>
+<p>I was able to get all this information to be dynamically created and generated into CSV files.</p>
+<section id="authorship-note" class="level2">
+<h2 class="anchored" data-anchor-id="authorship-note">Authorship note</h2>
+<p>For all datasets except The Pearl of Great Price I just went with the traditional authorship. For The Pearl of Great Price since there is some difference in how a text was authored, such as claims of translation to just a dictation of Joseph Smith’s words I just had authorship tied to the book it came frame, except for Joseph Smith History and The Articles of Faith which are tied to the authorship “Joseph Smith”</p>
+</section>
+</section>
+<section id="modeling" class="level1">
+<h1>Modeling</h1>
+<p>I used four different machine learning models in my analysis. All those models predict categorically meaning that they would guess an author given some data. The models I used are the following: - Random Forst - K Nearest Neighbors - Neural Network - Ensemble Model</p>
+<p>It is also important to note that the Ensemble Model is basically just a combination of the other three models.</p>
+<p>Explaining how each model works is out of the scope of the process, but it is sufficient to say that each model uses different statistical methods to define patterns that it finds in data, and then makes predictions based off those patterns.</p>
+<p>The metrics we use to evaluate the model’s performance are accuracy, precision, recall, and f1 score. They are defined as:</p>
+<ul>
+<li>Accuracy: The proportion of all predictions (both positive and negative) that were correct.</li>
+<li>Precision: The proportion of predicted positives that were correct.</li>
+<li>Recall: The proportion of actual positives that were correctly identified.</li>
+<li>F1 Score: The harmonic mean of precision and recall, balancing the two. (Per OpenAI. (2024). ChatGPT conversational AI model.)</li>
+</ul>
+<p>While all of these metrics are useful, the most useful metrics for us to look at is accuracy and f1 score.</p>
+<section id="modeling-methods" class="level2">
+<h2 class="anchored" data-anchor-id="modeling-methods">Modeling Methods</h2>
+<p>I created nine different subsets of data containing the following datasets: - All available datasets - All available datasets except the New Testament - The Book of Mormon by itself - The Book of Mormon and Doctrine &amp; Covenants - The Book of Mormon and New Testament - The Book of Mormon, The Late War, Spaulding Manuscript, and The View of The Hebrews - The Book of Mormon and Pearl of Great Price - The Doctrine &amp; Covenants, The Late War, Spaulding Manuscript, and The View of The Hebrews - The New Testament by itself.</p>
+</section>
+</section>
+<section id="findings" class="level1">
+<h1>Findings</h1>
+<section id="model-performance" class="level2">
+<h2 class="anchored" data-anchor-id="model-performance"><strong>Model Performance</strong></h2>
+<p>In terms of performance the models consistently ranked in the order of</p>
+<ol type="1">
+<li>Random Forest</li>
+<li>K Nearest Neighbors</li>
+<li>Ensemble Model</li>
+<li>Neural Network</li>
+</ol>
+<p>The models perform quite well when it comes to authors/text that had a higher amount of data. Inversely, the models perform much worse on authors/text that had lower amounts of data. This would be authors such as Enos, Joseph Smith History, Joseph Smith’s Revision of Matthew, Articles of Faith, The Book of Moses, James and Peter. Notably, The Pearl of Great Price text was wildly inconsistent, almost getting scores of near 0% accuracy for some authors.</p>
+<p>We can view the performance of the models in two ways: through the raw metrics numbers and through a confusion matrix. A confusion matrix shows how each author performed in the model. This is valuable information as it allows us to see how the model is specifically working/messing up. Since the Random Forest model performed the best, we will look at the performance of that model against the different datasets. For interpretation of a confusion matrix a simple way to look at it is the higher the numbers on the diagonal the better.</p>
+<section id="the-book-of-mormon-authorship" class="level3">
+<h3 class="anchored" data-anchor-id="the-book-of-mormon-authorship"><em>The Book of Mormon Authorship</em></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\BoM\rf.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">BoM Random Forest Confusion Matrix</figcaption>
+</figure>
+</div>
+<ul>
+<li>Accuracy: 0.9400</li>
+<li>Precision: 0.9434</li>
+<li>Recall: 0.9400</li>
+<li>F1-Score: 0.9398</li>
+</ul>
+<p>As you can see with just predicting within The Book of Mormon the Random Forest model does extremely well at predicting authorship! This supports the idea that the different claimed authors of The Book of Mormon have unique enough writing styles from each other that they can be accurately predicted by a Random Forest Model.</p>
+<p>We can see that when including Joseph Smith’s writings as found in Doctrine and Covenants, this pattern continues.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\BoM&amp;D&amp;C\rf.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">BoM Random Forest Confusion Matrix</figcaption>
+</figure>
+</div>
+<ul>
+<li>Accuracy: 0.9083</li>
+<li>Precision: 0.9164</li>
+<li>Recall: 0.9083</li>
+<li>F1-Score: 0.9097”</li>
+</ul>
+<p>When Doctrine and Covenants is thrown in, the accuracy is still very high, but the accuracy does go down by about 4%. While the different authors do have unique writing styles to still be differentiated, adding in Joseph Smith does seem to bring down the predictive power of model.</p>
+<p>What’s interesting to note is that sometimes when other authors are thrown in, the predictive power increases.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\BoM&amp;Others\rf.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">BoM&amp;Others Random Forest Confusion Matrix</figcaption>
+</figure>
+</div>
+<ul>
+<li>Accuracy: 0.9688</li>
+<li>Precision: 0.9715</li>
+<li>Recall: 0.9688</li>
+<li>F1-Score: 0.9686</li>
+</ul>
+<p>When some other 1800’s texts are thrown into the model it seems to help the model differentiate between not only The Book of Mormon authorship and other authors, but even the internal Book of Mormon authorship. This might lead someone to say this supports the idea that Joseph Smith was the sole author of The Book of Mormon since it as a whole gets better predictive power when other texts are introduced, but that idea does not take into account the stronger predictive power that is now found in each author of The Book of Mormon.</p>
+<p>Across all the different confusion matrices created The Book of Mormon has close to the same consistent results regardless of other text included in the model. The only author that differs is Enos, which can be accounted for his low amount of text written. We can see The Book of Mormon’s consistent performance when comparing it against just The Pearl of Great Price.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\BoM&amp;POGP\rf.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">BoM&amp;POGP Random Forest Confusion Matrix</figcaption>
+</figure>
+</div>
+<ul>
+<li>Accuracy: 0.7278</li>
+<li>Precision: 0.6505</li>
+<li>Recall: 0.7278</li>
+<li>F1-Score: 0.6729</li>
+</ul>
+<p>As we can see the numeric metrics are not nearly as strong in this data set, but that comes purely from the introduction of The Pearl of Great Price to the model whose poor performance can be blamed on the low amount of data found in that text.</p>
+<p>The highest performing dataset was the Doctrine and Covenants, The Late War, the Spaulding Manuscript and The View of The Hebrews.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\D&amp;C&amp;Others\rf.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">D&amp;C&amp;Others Random Forest Confusion Matrix</figcaption>
+</figure>
+</div>
+<ul>
+<li>Accuracy: 1.0000</li>
+<li>Precision: 1.0000</li>
+<li>Recall: 1.0000</li>
+<li>F1-Score: 1.0000</li>
+</ul>
+<p>We can see that the model was able to perfectly predict authorship of these text</p>
+<p>Lastly looking at all the data together the confusion matrix shows pretty good results.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\all\rf.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">all Random Forest Confusion Matrix</figcaption>
+</figure>
+</div>
+<ul>
+<li>Accuracy: 0.7674</li>
+<li>Precision: 0.7813</li>
+<li>Recall: 0.7674</li>
+<li>F1-Score: 0.7505</li>
+</ul>
+<p>The numeric results aren’t as strong, but when accounting for some authors that have very little writings the results make more sense.</p>
+</section>
+</section>
+<section id="word-comparisons" class="level2">
+<h2 class="anchored" data-anchor-id="word-comparisons"><strong>Word Comparisons</strong></h2>
+<p>Another way to analyze authorship would be to visualize function word use percentages in a scatterplot. I plot two words at a time as some words have a correlation in usage. Some have no correlation and are simply just a means to showcase more data at once. An important factor to look at is groupings. I divided authorship by color. The Book of Mormon authors are shades of blue, Joseph Smith is black and The Late War, The Spaulding Manuscript and The Late War are red. Some words show tighter groupings between those different authorships and some show no much correlation. Below are a diverse amount of word combinations showing the different correlations:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\the_of_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">the of combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\lord_god_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">lord god combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\with_had_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">with had combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\many_also_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">many also combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\therefore_wherefore_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">therefore wherefore combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\is_make_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">is make combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\such_did_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">such did combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\because_thereby_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">because thereby combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\if_my_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">if my combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\like_how_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">like how combination</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\say_wherefore_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">say wherefore combination</figcaption>
+</figure>
+</div>
+<p>Graphs based off of other stylometric variables (average letter per word, average words per sentence, vowel usage) also provide some interesting insights</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\avg_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">avg</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Graphs\Word%20Comparisons\vowel_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">vowels</figcaption>
+</figure>
+</div>
+<p>In a good amount of the graphs there seems to be a grouping between The Book of Mormon authors and the other authors. This does seem to lend support towards the idea that The Book of Mormon has a somewhat consistent usage of function words throughout the whole text. Critics of The Book of Mormon could say this is evidence of Joseph Smith being the sole author of The Book of Mormon. Authors of The Book of Mormon do claim that due to the nature of the writing process, as in writing on metal plates, they had to write in a language that they viewed as limited and thus also limits their writing. Whether or not this contributes to the similarities in function word use between The Book of Mormon authorship cannot be concluded, but it is an explanation that someone who holds to the religious view of The Book of Mormon could take.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In exploration of authorship of The Book of Mormon and different text we find evidence through stylometric analysis that the claims Joseph Smith and The Book of Mormon itself claim about the authorship of The Book of Mormon may have truth to them. When using machine learning models to learn the patterns of the different authors and then make predictions based off those patterns, a machine learning model can predict accuracy up to high percentage. When looking at function word usage individually we can see that there is some grouping in The Book of Mormon authors in how they use function words, but unique patterns still do present themselves among certain vocabulary. The miraculous claims of authorship regarding The Book of Mormon is not something that can be proven, but by investigating the claims made we can find evidence that does lend to multiple authors of The Book of Mormon.</p>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li><a href="https://languages.oup.com/google-dictionary-en">Oxford Languages</a></li>
+<li><a href="https://guides.temple.edu/stylometryfordh/methods">Stylometry Techniques</a></li>
+<li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng">The Book Of Mormon Text</a></li>
+<li><a href="https://aclanthology.org/W14-0908.pdf">Function Word Usage In Determining Authorship Article</a></li>
+</ul>
+<hr>
+</section>
+<section id="appendicesv" class="level3">
+<h3 class="anchored" data-anchor-id="appendicesv">Appendicesv</h3>
+<ul>
+<li><strong>Appendix A</strong>: <a href="Data_organizing_transformation.ipynb">Jupyter Notebook File Of Data Preprocessing</a></li>
+<li><strong>Appendix B</strong>: <a href="ML_Model_Usage.ipynb">Jupyter Notebook File Of Machine Learning Process</a></li>
+<li><strong>Appendix C</strong>: <a href="Data_visualizations.ipynb">Jupyter Notebook File Of Visualizations Creation (Some also found in Appendix B)</a></li>
+<li><strong>Appendix D</strong>: <a href="Graphs">All Visualizations</a></li>
+<li><strong>Appendix E</strong>: <a href="texts">All Text</a></li>
+<li><strong>Appendix F</strong>: <a href="~$metrics_report.xlsx">All Numeric Metrics</a></li>
+</ul>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
