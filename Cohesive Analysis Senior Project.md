@@ -193,27 +193,28 @@ The numeric results aren't as strong, but when accounting for some authors that 
 
 Another way to analyze authorship would be to visualize function word use percentages in a scatterplot. I plot two words at a time as some words have a correlation in usage. Some have no correlation and are simply just a means to showcase more data at once. An important factor to look at is groupings. I divided authorship by color. The Book of Mormon authors are shades of blue, Joseph Smith is black and The Late War, The Spaulding Manuscript and The Late War are red. Some words show tighter groupings between those different authorships and some show no much correlation. Below are a diverse amount of word combinations showing the different correlations:
 
-![the of combination](Graphs/Word Comparisons/the_of_output.png)
+![the of combination](Graphs/Word%20Comparisons/the%20of%20output.png)
 
-![lord god combination](Graphs/Word Comparisons/lord_god_output.png)
+![lord god combination](Graphs/Word%20Comparisons/lord%20god%20output.png)
 
-![with had combination](Graphs/Word Comparisons/with_had_output.png)
+![with had combination](Graphs/Word%20Comparisons/with%20had%20output.png)
 
-![many also combination](Graphs/Word Comparisons/many_also_output.png)
+![many also combination](Graphs/Word%20Comparisons/many%20also%20output.png)
 
-![therefore wherefore combination](Graphs/Word Comparisons/therefore_wherefore_output.png)
+![therefore wherefore combination](Graphs/Word%20Comparisons/therefore%20wherefore%20output.png)
 
-![is make combination](Graphs/Word Comparisons/is_make_output.png)
+![is make combination](Graphs/Word%20Comparisons/is%20make%20output.png)
 
-![such did combination](Graphs/Word Comparisons/such_did_output.png)
+![such did combination](Graphs/Word%20Comparisons/such%20did%20output.png)
 
-![because thereby combination](Graphs/Word Comparisons/because_thereby_output.png)
+![because thereby combination](Graphs/Word%20Comparisons/because%20thereby%20output.png)
 
-![if my combination](Graphs/Word Comparisons/if_my_output.png)
+![if my combination](Graphs/Word%20Comparisons/if%20my%20output.png)
 
-![like how combination](Graphs/Word Comparisons/like_how_output.png)
+![like how combination](Graphs/Word%20Comparisons/like%20how%20output.png)
 
-![say wherefore combination](Graphs/Word Comparisons/say_wherefore_output.png)
+![say wherefore combination](Graphs/Word%20Comparisons/say%20wherefore%20output.png)
+
 
 Graphs based off of other stylometric variables (average letter per word, average words per sentence, vowel usage) also provide some interesting insights
 
